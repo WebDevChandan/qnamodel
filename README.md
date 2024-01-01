@@ -6,7 +6,7 @@
 ## Project Title: Question Answering Model in India's Poor-Resourced Language
 
 ## Project Overview
-This is my College's Major Project. 
+This is my College's Major Project. </br>
 The objective of this project is to develop a "Question Answering Model" for Maithili, a language spoken predominantly in Bihar, and Nepal. Maithili is considered one of India's under-resourced languages.
 
 ## Tech Stack Used
