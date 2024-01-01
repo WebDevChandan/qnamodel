@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maithili Question Answering Model</title>
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Font Awesome Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+</head>
+
+<body>
+
+    <!-- Tutorial -->
+    <div class="tutorial">
+        <div class="tour">
+            <div class="tut-top">
+                <p class="step_label"> Step-1:</p>
+                <button class="tut-btn skip">Skip</button>
+            </div>
+            <p class="message"></p>
+
+            <div class="tut-btn-container">
+                <button class="tut-btn prev">Prev</button>
+                <button class="tut-btn next tut_btn_grad">Next</button>
+            </div>
+            <div class="carrot"></div>
+        </div>
+    </div>
+
+    <h1>Maithili Question Answering Model</h1>
+
+    <form action="/get-answer" method="POST">
+        <!-- Text Container -->
+        <div class="label-container">
+            <label class="main_label">Enter Text</label>
+            <button class="pst_txt">Paste Demo Text</button>
+
+            <div class="lang-labl-cotnainer">
+                <label for="eng" class="lang_labl">English</label><input type="radio" name="lang" value="en-GB" id="eng"
+                    class="radio_Btn eng_Btn" />
+                <label for="hin" class="lang_labl">Hindi</label><input type="radio" name="lang" value="hi-IN" id="hin"
+                    class="radio_Btn hi_Btn" />
+                <label for="maithili" class="lang_labl">Maithili</label><input type="radio" name="lang" value="maithili-In" id="maithili"
+                    class="radio_Btn maithili_Btn" />
+            </div>
+        </div>
+        <div class="txt_ar_container">
+            <textarea placeholder="Enter Text..." name="text" class="txt_arr" autocomplete="off"></textarea>
+            <i class="fa fa-microphone mic1 mic" aria-hidden="true"></i>
+        </div>
+
+        <!-- File Upload Container -->
+        <div class="label-container upload_btn_container">
+            <i class="fa fa-cloud-upload" aria-hidden="true"></i>
+            <button class="file_upload_btn">Upload File </button>
+            <input type="file" accept=".txt,.jpg,.png,.jpeg" id="dockfile" value="Upload Text File" />
+            <label class="fileData">Only <b>.txt file or Text Image</b> Allowed</label>
+
+            <div class="progressbar-container">
+                <div class="progressbar-track">
+                    <div class="progressbar"></div>
+                </div>
+                <div class="image-data-wrapper">
+                    <p class="fileData imageData"></p>
+                    <label class="img_upld_status">Uploading...</label>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Question Container-->
+        <div class="label-container">
+            <label class="main_label">Enter Question</label>
+            <button class="pst_qst">Paste Demo Question</button>
+        </div>
+
+        <div class="ques_ar_container">
+            <input type="text" placeholder="Enter Question" name="question" autocomplete="off" value="" />
+            <i class="fa fa-microphone mic2 mic" aria-hidden="true"></i>
+        </div>
+
+        <!-- SUBMIT Button -->
+        <input class="submit-btn" type="submit" name="submit" value="GET ANSWER" class="submit-btn" />
+
+        <!-- GOT ANSWER -->
+        <div class="get_answer" id="">
+            <h2>Your Answer: </h2> <i class="fa-solid fa-volume-high"></i>
+            <p class="answer">{{Answer}}</p>
+        </div>
+    </form>
+
+    <!-- LOADER hideLdr -->
+    <div class="loader-container hideLdr">
+        <button class="loader showLoader hideLdr"></button>
+    </div>
+
+
+    <!-- <h2>Orignal Answer:</h2>
+  <p class="answer">{{original}}</p> -->
+
+
+    <!-- Tesaract Library - To Convert Image to Text-->
+    <script src="https://unpkg.com/tesseract.js@v2.0.0-alpha.13/dist/tesseract.min.js"></script>
+
+    <!-- My Script -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>
